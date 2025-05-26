@@ -1,0 +1,224 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+header {
+    background-color: #232f3e;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative; /* Added for logo positioning */
+}
+
+#logo {
+    max-height: 80px; /* Adjust as needed */
+    position: absolute; /* Example positioning */
+    left: 20px; /* Example positioning */
+    top: 50%; /* Example positioning */
+    transform: translateY(-50%); /* Example positioning */
+}
+
+header nav {
+    display: inline-block; /* Align nav next to logo if header is wide enough */
+    vertical-align: middle; /* Aligns nav text with logo if it's inline-block */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* For horizontal layout */
+}
+
+header nav ul li {
+    margin-left: 20px; /* Spacing between nav items */
+}
+
+header nav ul li:first-child {
+    margin-left: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Style for active link if we add JS later */
+    background-color: #febd69;
+    color: #232f3e;
+}
+
+.hero-banner {
+    background-image: url('pawnstarsbanner.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.hero-banner div {
+    background-color: rgba(0,0,0,0.65);
+    display: inline-block;
+    padding: 30px 40px;
+    border-radius: 5px;
+    max-width: 700px;
+}
+
+.hero-banner h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #febd69;
+    font-weight: 700;
+}
+
+.hero-banner p {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    background-color: #febd69;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #f79e35;
+}
+
+.text-center {
+    text-align: center;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.featured-collections-section h2,
+.positive-reviews-section h2,
+.loan-services-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #232f3e;
+}
+
+.featured-collection-image {
+    max-width: 100%;
+    max-height: 250px; /* Adjust as needed */
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.collections-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.collections-list li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.positive-reviews-section {
+    background-color: #e9ecef;
+}
+
+.loan-services-section {
+    background-color: #fff5e6;
+    border: 1px solid #ffe0b3;
+    border-radius: 4px;
+}
+
+.loan-services-section h2 {
+    color: #b12704;
+}
+
+.we-buy-gold-banner {
+    background-color: #febd69;
+    color: #131a22;
+    padding: 30px 20px;
+    border-radius: 4px;
+}
+
+.we-buy-gold-banner h3 {
+    font-size: 2.5em;
+    margin:0 0 10px 0;
+    font-weight: 700;
+}
+
+.we-buy-gold-image {
+    max-width: 100%;
+    max-height: 200px; /* Adjust as needed */
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #232f3e;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 20px;
+}
+
+/* Basic Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner h2 {
+        font-size: 2em;
+    }
+
+    .hero-banner p {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .featured-collections-section h2,
+    .positive-reviews-section h2,
+    .loan-services-section h2,
+    .we-buy-gold-banner h3 {
+        font-size: 2em;
+    }
+}
+
+.slogan {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #d1320a; /* A slightly different color to make it pop, adjust as needed */
+    margin-bottom: 15px;
+}
+
+.about-us-section {
+    background-color: #f8f9fa; /* A light neutral background */
+    padding: 40px 20px;
+}
+
+.about-us-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #232f3e;
+}
+
+.about-us-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 15px auto; /* Center the paragraphs */
+} 
