@@ -184,24 +184,70 @@ footer {
 
 /* Basic Responsive Design */
 @media (max-width: 768px) {
+    #logo {
+        max-height: 50px; /* Smaller logo on mobile */
+        position: static; /* Remove absolute positioning */
+        display: block; /* Make it a block to center it if header is text-align: center */
+        margin: 0 auto 10px; /* Center it and add some bottom margin */
+    }
+
+    header nav {
+        display: block; /* Make nav take full width */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+    }
+
+    header nav ul li {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+
+    .hero-banner {
+        min-height: auto; /* Let content define height, or set a smaller fixed one e.g., 300px */
+        padding: 30px 15px; /* Adjust padding */
+        /* Re-center content for mobile if top-right doesn't work */
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .hero-banner div { /* The text box */
+        max-width: 90%; /* Allow it to be wider on small screens */
+        padding: 20px;
+    }
+
     .hero-banner h2 {
-        font-size: 2em;
+        font-size: 1.8em; /* Adjusted from 2em */
     }
 
     .hero-banner p {
-        font-size: 1.2em;
+        font-size: 1em; /* Adjusted from 1.2em */
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 12px 20px; /* Adjusted from 10px 20px */
+        font-size: 0.9em; /* Adjusted from 1em */
     }
 
     .featured-collections-section h2,
     .positive-reviews-section h2,
     .loan-services-section h2,
-    .we-buy-gold-banner h3 {
-        font-size: 2em;
+    .we-buy-gold-banner h3,
+    .about-us-section h2 { /* Added about-us h2 */
+        font-size: 1.8em; /* Adjusted from 2em */
+    }
+
+    .collections-list li,
+    .about-us-section p,
+    .slogan {
+        font-size: 1em; /* Adjust other paragraph/list font sizes */
+    }
+
+    .featured-collection-image,
+    .we-buy-gold-image {
+        max-height: 150px; /* Smaller max-height for these images on mobile */
     }
 }
 
