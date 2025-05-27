@@ -208,7 +208,6 @@ footer {
     .hero-banner {
         min-height: auto; /* Let content define height, or set a smaller fixed one e.g., 300px */
         padding: 30px 15px; /* Adjust padding */
-        /* Re-center content for mobile if top-right doesn't work */
         align-items: center; 
         justify-content: center;
     }
@@ -219,37 +218,98 @@ footer {
     }
 
     .hero-banner h2 {
-        font-size: 1.8em; /* Adjusted from 2em */
+        font-size: 1.8em; 
     }
 
     .hero-banner p {
-        font-size: 1em; /* Adjusted from 1.2em */
+        font-size: 1em; 
     }
 
     .btn {
-        padding: 12px 20px; /* Adjusted from 10px 20px */
-        font-size: 0.9em; /* Adjusted from 1em */
+        padding: 12px 20px; 
+        font-size: 0.9em; 
     }
 
     .featured-collections-section h2,
     .positive-reviews-section h2,
     .loan-services-section h2,
     .we-buy-gold-banner h3,
-    .about-us-section h2 { /* Added about-us h2 */
-        font-size: 1.8em; /* Adjusted from 2em */
+    .about-us-section h2,
+    .photo-gallery-section h1 { /* Added gallery h1 */
+        font-size: 1.8em; 
+    }
+
+    .photo-gallery-section p { /* Added gallery p */
+        font-size: 1em;
+        margin-bottom: 20px;
     }
 
     .collections-list li,
     .about-us-section p,
     .slogan {
-        font-size: 1em; /* Adjust other paragraph/list font sizes */
+        font-size: 1em; 
     }
 
     .featured-collection-image,
     .we-buy-gold-image {
-        max-height: 150px; /* Smaller max-height for these images on mobile */
+        max-height: 150px; 
+    }
+
+    /* Gallery specific mobile styles */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for mobile */
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        height: 120px; /* Smaller height for mobile gallery images */
     }
 }
+
+/* ... (Desktop styles for .slogan, .about-us-section, and now .photo-gallery-section, .gallery-grid etc. would be here if not above) ... */
+
+/* Desktop styles for gallery if they weren't already defined before media query */
+.photo-gallery-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.photo-gallery-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Style for the active navigation link */
+header nav ul li a.active {
+    background-color: #febd69;
+    color: #232f3e;
+    font-weight: bold; /* Make active link bold */
+}
+
+/* ... (any remaining styles like .hero-banner that should be outside media query) ... */
 
 .slogan {
     font-size: 1.3em;
@@ -274,4 +334,66 @@ footer {
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 15px auto; /* Center the paragraphs */
+}
+
+/* Gallery Page Styles */
+.photo-gallery-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.photo-gallery-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between images */
+    padding: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity, adjust as needed */
+    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments for gallery images if needed */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .gallery-grid img {
+        height: 120px; /* Smaller height for mobile */
+    }
+    /* ... other mobile styles ... */
+}
+
+/* Make sure the existing media query combines properly */
+/* ... existing @media (max-width: 768px) { ... } styles ... */
+
+.gallery-category {
+    margin-bottom: 40px; /* Space between categories */
+}
+
+.gallery-category h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #febd69; /* Accent border */
+    display: inline-block; /* So border only spans the text width */
 } 
