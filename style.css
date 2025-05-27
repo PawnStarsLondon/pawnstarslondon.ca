@@ -396,4 +396,196 @@ header nav ul li a.active {
     padding-bottom: 10px;
     border-bottom: 2px solid #febd69; /* Accent border */
     display: inline-block; /* So border only spans the text width */
-} 
+}
+
+/* Loan Page Specific Styles */
+.loan-details-hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f0f0f0; /* Light background for the hero area */
+}
+
+.loan-page-main-logo {
+    max-width: 250px; /* Adjust size as needed */
+    margin-bottom: 25px;
+}
+
+.loan-details-hero-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 15px;
+}
+
+.loan-details-hero-section .lead {
+    font-size: 1.3em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.highlighted-loans-section {
+    background-color: #fff; /* White background for this section */
+    padding: 50px 20px;
+}
+
+.highlighted-loans-section h2 {
+    font-size: 2.5em;
+    color: #b12704; /* Using a prominent color */
+    margin-bottom: 15px;
+}
+
+.highlighted-loans-section > p { /* Target the paragraph directly under the section */
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loan-examples-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 20px;
+}
+
+.loan-example-box {
+    background-color: #fff5e6; /* Light accent color */
+    border: 2px solid #febd69; /* Gold border */
+    border-radius: 8px;
+    padding: 30px;
+    width: 320px; /* Fixed width for the boxes */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loan-example-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.loan-example-box h3 {
+    font-size: 2em;
+    color: #b12704;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.loan-example-box p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.disclaimer {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 15px;
+}
+
+.how-loans-work-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.how-loans-work-section h2,
+.accepted-items-loan-section h2,
+.contact-loan-section h2 {
+    font-size: 2.3em;
+    color: #232f3e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.process-steps {
+    list-style: none; /* Can use decimal for 1. 2. 3. */
+    padding-left: 0; 
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.process-steps li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.process-steps li::before { /* For custom numbering or bullet */
+    content: "\2713"; /* Checkmark */
+    color: #febd69;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.accepted-items-loan-section {
+    padding: 40px 20px;
+}
+
+.accepted-items-loan-section .accepted-items-intro {
+    text-align: center; /* Center the introductory paragraph */
+    max-width: 600px; /* Optional: constrain width like the list */
+    margin-left: auto; /* Required for centering block-level element if max-width is set */
+    margin-right: auto; /* Required for centering block-level element if max-width is set */
+    margin-bottom: 20px; /* Optional: add some space below it */
+}
+
+.accepted-items-list {
+    list-style: none; /* Or disc, square */
+    padding-left: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    columns: 2; /* Display in two columns if space allows */
+    gap: 20px;
+}
+
+.accepted-items-list li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.accepted-items-list li::before {
+    content: "\27A4"; /* Arrow bullet */
+    color: #b12704;
+    position: absolute;
+    left: 0;
+}
+
+.contact-loan-section {
+    background-color: #e9ecef;
+    padding: 50px 20px;
+}
+
+/* Responsive adjustments for Loan Page */
+@media (max-width: 768px) {
+    .loan-page-main-logo {
+        max-width: 180px;
+    }
+    .loan-details-hero-section h1,
+    .highlighted-loans-section h2,
+    .how-loans-work-section h2,
+    .accepted-items-loan-section h2,
+    .contact-loan-section h2 {
+        font-size: 2em;
+    }
+    .loan-examples-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .loan-example-box {
+        width: 90%;
+        max-width: 350px; /* Max width for mobile boxes */
+        margin-bottom: 20px;
+    }
+    .accepted-items-list {
+        columns: 1;
+    }
+    /* Add other loan page specific mobile styles if needed */
+}
+
+/* ... rest of styles ... */ 
