@@ -588,4 +588,451 @@ header nav ul li a.active {
     /* Add other loan page specific mobile styles if needed */
 }
 
+/* ... rest of styles ... */
+
+.hamburger-menu {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em; /* Adjust size as needed */
+    cursor: pointer;
+    position: absolute; /* Position it relative to the header */
+    right: 20px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center it */
+    z-index: 1001; /* Ensure it's above other header content if needed */
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    header nav {
+        display: block; /* Make nav take full width */
+        width: 100%; /* Ensure it spans the header width */
+        position: absolute; /* Position it for dropdown behavior */
+        top: 100%; /* Position it right below the header */
+        left: 0;
+        background-color: #232f3e; /* Same as header background */
+        z-index: 1000; /* Ensure it's above other content but below hamburger if overlapping */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+        width: 100%;
+        max-height: 0; /* Initially hide the menu */
+        overflow: hidden; /* Prevent content from showing when max-height is 0 */
+        transition: max-height 0.3s ease-out; /* Smooth transition for showing/hiding */
+    }
+
+    header nav ul.nav-active {
+        max-height: 500px; /* Adjust as needed to fit all items */
+        padding-bottom: 10px; /* Add some padding when open */
+    }
+
+    #logo {
+        max-height: 50px; /* Smaller logo on mobile */
+        position: static; /* Remove absolute positioning */
+        display: block; /* Make it a block to center it if header is text-align: center */
+        margin: 0 auto 10px; /* Center it and add some bottom margin */
+    }
+
+    header nav ul li {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+        width: 100%; /* Make list items take full width for easier clicking */
+        text-align: center; /* Center text within list items */
+    }
+
+    header nav ul li a {
+        display: block; /* Make the entire link area clickable */
+        padding: 10px 0; /* Adjust padding for mobile */
+    }
+
+    .hero-banner {
+        min-height: auto; /* Let content define height, or set a smaller fixed one e.g., 300px */
+        padding: 30px 15px; /* Adjust padding */
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .hero-banner div { /* The text box */
+        max-width: 90%; /* Allow it to be wider on small screens */
+        padding: 20px;
+    }
+
+    .hero-banner h2 {
+        font-size: 1.8em; 
+    }
+
+    .hero-banner p {
+        font-size: 1em; 
+    }
+
+    .btn {
+        padding: 12px 20px; 
+        font-size: 0.9em; 
+    }
+
+    .featured-collections-section h2,
+    .positive-reviews-section h2,
+    .loan-services-section h2,
+    .we-buy-gold-banner h3,
+    .about-us-section h2,
+    .photo-gallery-section h1 { /* Added gallery h1 */
+        font-size: 1.8em; 
+    }
+
+    .photo-gallery-section p { /* Added gallery p */
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .collections-list li,
+    .about-us-section p,
+    .slogan {
+        font-size: 1em; 
+    }
+
+    .featured-collection-image,
+    .we-buy-gold-image {
+        max-height: 150px; 
+    }
+
+    /* Gallery specific mobile styles */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        height: 120px; /* Smaller height for mobile */
+    }
+}
+
+/* ... (Desktop styles for .slogan, .about-us-section, and now .photo-gallery-section, .gallery-grid etc. would be here if not above) ... */
+
+/* Desktop styles for gallery if they weren't already defined before media query */
+.photo-gallery-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.photo-gallery-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Style for the active navigation link */
+header nav ul li a.active {
+    background-color: #febd69;
+    color: #232f3e;
+    font-weight: bold; /* Make active link bold */
+}
+
+/* ... (any remaining styles like .hero-banner that should be outside media query) ... */
+
+.slogan {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #d1320a; /* A slightly different color to make it pop, adjust as needed */
+    margin-bottom: 15px;
+}
+
+.about-us-section {
+    background-color: #f8f9fa; /* A light neutral background */
+    padding: 40px 20px;
+}
+
+.about-us-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #232f3e;
+}
+
+.about-us-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 15px auto; /* Center the paragraphs */
+}
+
+/* Gallery Page Styles */
+.photo-gallery-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.photo-gallery-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between images */
+    padding: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity, adjust as needed */
+    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments for gallery images if needed */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .gallery-grid img {
+        height: 120px; /* Smaller height for mobile */
+    }
+    /* ... other mobile styles ... */
+}
+
+/* Make sure the existing media query combines properly */
+/* ... existing @media (max-width: 768px) { ... } styles ... */
+
+.gallery-category {
+    margin-bottom: 40px; /* Space between categories */
+}
+
+.gallery-category h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #febd69; /* Accent border */
+    display: inline-block; /* So border only spans the text width */
+}
+
+/* Loan Page Specific Styles */
+.loan-details-hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f0f0f0; /* Light background for the hero area */
+}
+
+.loan-page-main-logo {
+    max-width: 250px; /* Adjust size as needed */
+    margin-bottom: 25px;
+}
+
+.loan-details-hero-section h1 {
+    font-size: 2.8em;
+    color: #232f3e;
+    margin-bottom: 15px;
+}
+
+.loan-details-hero-section .lead {
+    font-size: 1.3em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.highlighted-loans-section {
+    background-color: #fff; /* White background for this section */
+    padding: 50px 20px;
+}
+
+.highlighted-loans-section h2 {
+    font-size: 2.5em;
+    color: #b12704; /* Using a prominent color */
+    margin-bottom: 15px;
+}
+
+.highlighted-loans-section > p { /* Target the paragraph directly under the section */
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loan-examples-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 20px;
+}
+
+.loan-example-box {
+    background-color: #fff5e6; /* Light accent color */
+    border: 2px solid #febd69; /* Gold border */
+    border-radius: 8px;
+    padding: 30px;
+    width: 320px; /* Fixed width for the boxes */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loan-example-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.loan-example-box h3 {
+    font-size: 2em;
+    color: #b12704;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.loan-example-box p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.disclaimer {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 15px;
+}
+
+.how-loans-work-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.how-loans-work-section h2,
+.accepted-items-loan-section h2,
+.contact-loan-section h2 {
+    font-size: 2.3em;
+    color: #232f3e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.process-steps {
+    list-style: none; /* Can use decimal for 1. 2. 3. */
+    padding-left: 0; 
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.process-steps li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.process-steps li::before { /* For custom numbering or bullet */
+    content: "\2713"; /* Checkmark */
+    color: #febd69;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.accepted-items-loan-section {
+    padding: 40px 20px;
+}
+
+.accepted-items-loan-section .accepted-items-intro {
+    text-align: center; /* Center the introductory paragraph */
+    max-width: 600px; /* Optional: constrain width like the list */
+    margin-left: auto; /* Required for centering block-level element if max-width is set */
+    margin-right: auto; /* Required for centering block-level element if max-width is set */
+    margin-bottom: 20px; /* Optional: add some space below it */
+}
+
+.accepted-items-list {
+    list-style: none; /* Or disc, square */
+    padding-left: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    columns: 2; /* Display in two columns if space allows */
+    gap: 20px;
+}
+
+.accepted-items-list li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.accepted-items-list li::before {
+    content: "\27A4"; /* Arrow bullet */
+    color: #b12704;
+    position: absolute;
+    left: 0;
+}
+
+.contact-loan-section {
+    background-color: #e9ecef;
+    padding: 50px 20px;
+}
+
+/* Responsive adjustments for Loan Page */
+@media (max-width: 768px) {
+    .loan-page-main-logo {
+        max-width: 180px;
+    }
+    .loan-details-hero-section h1,
+    .highlighted-loans-section h2,
+    .how-loans-work-section h2,
+    .accepted-items-loan-section h2,
+    .contact-loan-section h2 {
+        font-size: 2em;
+    }
+    .loan-examples-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .loan-example-box {
+        width: 90%;
+        max-width: 350px; /* Max width for mobile boxes */
+        margin-bottom: 20px;
+    }
+    .accepted-items-list {
+        columns: 1;
+    }
+    /* Add other loan page specific mobile styles if needed */
+}
+
 /* ... rest of styles ... */ 
