@@ -595,7 +595,7 @@ header nav ul li a.active {
     background: none;
     border: none;
     color: white;
-    font-size: 2em; /* Adjust size as needed */
+    font-size: 1em; /* Changed from 2em to 1em */
     cursor: pointer;
     position: absolute; /* Position it relative to the header */
     right: 20px; /* Adjust as needed */
@@ -634,10 +634,31 @@ header nav ul li a.active {
     }
 
     #logo {
-        max-height: 50px; /* Smaller logo on mobile */
-        position: static; /* Remove absolute positioning */
-        display: block; /* Make it a block to center it if header is text-align: center */
-        margin: 0 auto 10px; /* Center it and add some bottom margin */
+        max-height: 75px; /* 75% of previous 100px is 75px, not 25px. User means 75% of original 50px perhaps or 75% of current 100px. Assuming user wants 75% of previous 100px, so 75px. If meant 75% of original 50px it would be 37.5px. Let's go with 75px for now as a more sensible size. If the user meant 25% of 100px, that's 25px. Let's re-read: "75% of the current size it is" -- current was 100px. So 75px */
+        height: 75px;    /* Explicit height for the image */
+        object-fit: contain; /* Ensures logo scales nicely */
+        position: absolute;
+        top: 2em; /* Header padding is 1em. Hamburger is 1em tall, centered. Its top is 0.5em from top of header content area */
+                 /* If header has 1em top padding, hamburger top: 50% T(-50%) means its center is at 1em + half of its own height. Its top is 1em. */
+                 /* Let's assume the default font-size is 16px. Header padding 1em = 16px. Hamburger font-size 1em = 16px tall. */
+                 /* Hamburger top edge = (Header padding-top) + (Header height - Hamburger height)/2 - any transform. */
+                 /* More simply: Hamburger is centered in header. Header has 1em top padding. Hamburger is 1em. */
+                 /* So, its top visual edge would be approx (Header padding-top) + ( (Total header content height - hamburger height) / 2 ). */
+                 /* This is tricky. A simpler start: align to the header's top padding edge. */
+                 /* Header global padding is `1em 0`. Hamburger is `top: 50%; transformY(-50%)`. Hamburger font-size is `1em`. */
+                 /* The top of the hamburger is roughly 0.5em from the top of the header's *content box* if the header content height is small and dominated by hamburger */
+                 /* Or, if header total height (padding + content) is H_header, hamburger height is H_ham, top of hamburger = (H_header - H_ham)/2. */
+                 /* Let's assume header padding `1em 0` means its effective content area starts after 1em top padding. */
+                 /* Hamburger (1em font) is centered. Top of hamburger would be approximately 1em (padding) + 0.5 * (font-size-of-header-content - 1em)  */
+                 /* Let's assume `top: 0.75em;` as a starting point, aiming to be slightly below header's top padding to align with the top of the smaller hamburger. */
+                 /* If header padding-top is 1em, and hamburger is 1em tall and centered, its top is at ( (header_content_height_excluding_padding + 2em_padding) - 1em_hamburger_height ) / 2. */
+                 /* This needs to be dynamic. Let's use a value that should work based on the header's top padding. */
+                 /* The header padding is `1em`. The hamburger `font-size` is `1em`.  The hamburger is centered. So its top edge will be `0.5em` from the top of the content area of the header if header is only 1em high. */
+                 /* No, if header padding-top is 1em, and hamburger is 1em tall, its visual top is at (1em padding) from the top of the border box. */
+                 /* Let's try setting logo top to be similar to header's top padding. */
+        left: 10px; /* Space from left edge */
+        margin: 0; /* Remove any auto margins */
+        z-index: 999; /* Below nav dropdown (1000) and hamburger (1001) */
     }
 
     header nav ul li {
